@@ -105,7 +105,7 @@ BUILD_VERSION_TAGS += $(BUILD_KEYS)
 BUILD_VERSION_TAGS := $(subst $(space),$(comma),$(sort $(BUILD_VERSION_TAGS)))
 
 # A human-readable string that descibes this build in detail.
-build_desc := Selwel-$(TARGET_PRODUCT)-$(TARGET_BUILD_VARIANT) $(PLATFORM_VERSION)
+build_desc := Sekwel-$(TARGET_PRODUCT)-$(TARGET_BUILD_VARIANT) $(PLATFORM_VERSION)
 $(INSTALLED_BUILD_PROP_TARGET): PRIVATE_BUILD_DESC := $(build_desc)
 
 # The string used to uniquely identify the combined build and product; used by the OTA server.
@@ -1463,7 +1463,7 @@ ifneq ($(recovery_fstab),)
 # OTA update package
 
 #name := $(TARGET_PRODUCT)
-name := Sekwel$(PRODUCT_NAME)-$(BUILD_ID)
+name := Sekwel-$(BUILD_ID)-$(shell date +%m%d%H%M)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
 endif
